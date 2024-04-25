@@ -1,0 +1,34 @@
+<div class="container">
+    <div>
+        <label for="">sortBy</label>
+        <select class="custom-select" (ngModelChange)="selectChangeSortBy( $event)" [(ngModel)]="qparams.sortBy">
+            <option value="id">ID</option>
+            <option value="content">content</option>
+            <option value="title">title</option>
+        </select>
+    </div>
+    <div>
+        <label for="">order</label>
+        <select class="custom-select" (ngModelChange)="selectChangeOrder( $event)" [(ngModel)]="qparams.order">
+            <option value="asc">New</option>
+            <option value="desc">Old</option>
+        </select>
+    </div>
+
+    <div class=" mb-3 mt-3">
+        <label for="">Search</label>
+        <input type="text" [(ngModel)]="qparams.search" class="form-control" placeholder="" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+
+    <div class="d-flex justify-content-between flex-wrap align-items-center">
+        <button type="button" class="btn btn-secondary mb-3 block" (click)="updateQuerySearch()">Search</button>
+        <a type="button  d-block block " routerLink="/create" class="btn btn-primary">add new</a>
+    </div>
+    <div *ngFor="let item of mediaList">
+        <app-media (clickAction)="handleGetMediaItem($event)" [data]="item"></app-media>
+    </div>
+    <div class="d-flex justify-content-end mt-6">
+        <app-panigation (clickAction)="handleGetPage($event)" [page]="qparams.page"></app-panigation>
+    </div>
+</div>

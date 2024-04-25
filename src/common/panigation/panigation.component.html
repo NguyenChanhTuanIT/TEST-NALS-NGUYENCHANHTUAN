@@ -1,0 +1,11 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item pointer"><a class="page-link" tabindex="0" (click)="prevPage()" (keyup.enter)="prevPage()" (keyup.space)="prevPage()">Previous</a></li>
+        <li class="page-item pointer"
+        [ngClass]="{'active': item === page}"
+
+        *ngFor="let item of pages"
+        ><a class="page-link " (click)="handlePage(item)" tabindex="0" (click)="handlePage(item)" (keyup.space)="handlePage(item)">{{item}}</a></li>
+        <li class="page-item pointer"><a class="page-link" tabindex="0" (click)="nextPage()" (keyup.enter)="nextPage()" (keyup.space)="nextPage()">Next</a></li>
+    </ul>
+</nav>

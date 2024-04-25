@@ -1,0 +1,13 @@
+<div class="container">
+    <img src="{{data.image}}" class="poloti mb-2rem" alt="{{data.title}}">
+    <div class="">
+        <h5 class="mt-0">{{data.title}}</h5>
+        <p>{{data.content}}</p>
+        <p></p>
+    </div>
+
+    <div class="d-flex justify-content-between flex-wrap align-items-center">
+        <button type="button" class="btn btn-secondary mb-3 block" (click)="handleBack()">Back</button>
+        <a type="button  d-block block "  [routerLink]="['/blog', data.id, 'edit']" class="btn btn-primary">edit</a>
+    </div>
+</div>
